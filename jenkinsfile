@@ -12,10 +12,4 @@ environment {
                 sh 'mvn clean package -DskipTests'
             }
         }
-
-        stage('Deploy') {
-            steps {
-                sh 'mvn deploy -DskipTests'
-            }
-        }
     }
