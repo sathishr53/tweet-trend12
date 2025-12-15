@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 pipeline {
     agent {
         node {
@@ -13,20 +12,5 @@ pipeline {
             }
         }
     }
-=======
-pipeline {
-    agent {
-        node {
-            label 'maven'
-        }
-    }
 
-    stages {
-        stage('clone-code') {
-            steps {
-                git branch: 'main', url: 'https://github.com/sathishr53/tweet-trend12'
-            }
-        }
-    }
->>>>>>> f12bd468ed53e1b58e95fa448d92bc4d93fc4757
 }
