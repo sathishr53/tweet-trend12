@@ -8,16 +8,10 @@ environment {
     PATH = "/opt/apache-maven-3.9.2/bin:$PATH"
 }
 stages {
-    stage('Build') {
-        steps {
-            sh 'mvn clean package'
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
             }
         }
-
-    stage('Deploy') {
-        steps {
-            sh 'mvn deploy'
-            }
-        }
-   }   
+    }
 }
