@@ -3,7 +3,7 @@
 pipeline {
     agent any
     tools {
-        maven 'M3' // 'M3' should match the name configured in Global Tool Configuration
+        maven // 'M3' should match the name configured in Global Tool Configuration
     }
     stages {
         stage('Build') {
