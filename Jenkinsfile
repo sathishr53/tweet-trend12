@@ -1,9 +1,11 @@
- 
-
 pipeline {
-    agent any
-    tools {
-        maven // 'M3' should match the name configured in Global Tool Configuration
+    agent {
+        node {
+            label 'maven'
+        }
+    }
+environment {
+        PATH = "/opt/apache-maven-3.9.11/bin:$PATH"
     }
     stages {
         stage('Build') {
