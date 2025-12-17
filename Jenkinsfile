@@ -1,19 +1,15 @@
- pipeline {
-    agent {
-        node {
-            label 'maven'
+ 
+
+pipeline {
+    agent any
+    tools {
+        maven 'M3' // 'M3' should match the name configured in Global Tool Configuration
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
         }
     }
-environment {
-    PATH = "/opt/apache-maven-3.9.2/bin:$PATH"
 }
-    stages {
-        stage("Build") {
-            steps {
-                sh 'mvn clean deploy'
-            }
-        }   
-   
-    }
-}
-
