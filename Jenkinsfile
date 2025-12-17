@@ -1,17 +1,18 @@
 pipeline {
-    agent {
-        node {
-            label 'maven'
-        }
+    agent any
+
+    tools {
+        maven 'Maven3'
+        jdk 'JDK11'
     }
 environment {
-    PATH = "/opt/apache-maven-3.9.2/bin:$PATH"
-}
-stages {
+        PATH = "/opt/apache-maven-3.9.11/bin:$PATH"
+    }
+
         stage('Build') {
             steps {
                 sh 'mvn clean package'
-            }
         }
-    }
+     }
 }
+
