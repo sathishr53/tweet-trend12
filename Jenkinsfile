@@ -7,8 +7,9 @@ pipeline {
 environment {
     PATH = "/opt/apache-maven-3.9.2/bin:$PATH"
 }
+stages {
     stage('Build') {
-         steps {
+        steps {
             sh 'mvn clean package'
             }
         }
@@ -18,4 +19,5 @@ environment {
             sh 'mvn deploy'
             }
         }
-    }
+   }   
+}
