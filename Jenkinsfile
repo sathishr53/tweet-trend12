@@ -13,16 +13,12 @@ pipeline {
                 sh 'mvn clean deploy -Dmaven.test.skip=true -e'
            }
         }
-    stage('SonarQube analysis') {
-    environment {
-      scannerHome = tool 'valaxy-sonar-scanner';
-    }     
-}
-    steps{
-    withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
-      sh 'mvn sonar:sonar'
+ stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('sonarqube-server') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
     }
-  }
 }
-}  
-
