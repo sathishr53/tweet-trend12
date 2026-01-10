@@ -14,11 +14,11 @@ pipeline {
            }
         }
  stage('SonarQube analysis') {
-            steps {
-                withSonarQubeEnv('sonarqube-server') {
-                    sh 'mvn sonar:sonar'
-                }
-            }
+    steps {
+        withSonarQubeEnv('SonarQube') {
+            sh 'mvn sonar:sonar'
         }
+    }
+}
     }
 }
