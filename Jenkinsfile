@@ -17,21 +17,17 @@ pipeline {
     environment {
       scannerHome = tool 'valaxy-sonar-scanner';
     }
-    steps{
+    steps{}
     withSonarQubeEnv('valaxy-sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
 }
-}  
-}
-<<<<<<< HEAD
+}   
 
 
 
 
 
 
-=======
-  
->>>>>>> 5e953492fa12bccf7fb0c121c8a2e3291ea2f9d2
+
